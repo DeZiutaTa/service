@@ -70,6 +70,7 @@ class IngredientControllerTest {
             Assertions.assertEquals("Not Found", e.getMessage());
         }
     }
+
     @Test
     void getAllIngredients_Returns() {
         when(mockRepository.findAll()).thenReturn(Arrays.asList(new IngredientEntity("a", 1, 1, 1, 1, 1),
