@@ -6,8 +6,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import ro.unibuc.hello.data.RecipeEntity;
-import ro.unibuc.hello.data.RecipeEntity;
+import ro.unibuc.hello.data.IngredientEntity;
 import ro.unibuc.hello.data.RecipeRepository;
+import ro.unibuc.hello.data.IngredientRepository;
 import ro.unibuc.hello.dto.AddIngredientDto;
 import ro.unibuc.hello.dto.AddRecipeDto;
 import ro.unibuc.hello.exception.BadRequestException;
@@ -74,6 +75,7 @@ class RecipeControllerTest {
             Assertions.assertEquals("Not Found", e.getMessage());
         }
     }
+
     @Test
     void getAllRecipes_Returns() {
         ArrayList<String> mockRecipes1 = new ArrayList<String>(Arrays.asList("a", "b", "c"));
@@ -88,18 +90,18 @@ class RecipeControllerTest {
         Assertions.assertEquals(3, res.size());
     }
 
-//    @Test
-//    void addRecipe() {
-//        var Ingredient1 = new AddIngredientDto("ingredient1", 1, 1, 1, 1, 1);
-//        ingredientController.addIngredient(Ingredient1);
-//        var Ingredient2 = new AddIngredientDto("ingredient2", 1, 1, 1, 1, 1);
-//        ingredientController.addIngredient(Ingredient2);
-//        ArrayList<String> mockRecipe = new ArrayList<String>(Arrays.asList("ingredient1", "ingredient2"));
-//        var Recipe = new AddRecipeDto("name", mockRecipe);
-//        recipeController.addRecipe(Recipe);
-//
-//        verify(mockRepository, times(1)).save(any());
-//    }
+/*    @Test
+    void addRecipe() {
+        var Ingredient = new AddIngredientDto("ingredient1", 1, 1, 1, 1, 1);
+        ingredientController.addIngredient(Ingredient);
+        var Ingredient2 = new AddIngredientDto("ingredient2", 1, 1, 1, 1, 1);
+        ingredientController.addIngredient(Ingredient2);
+        ArrayList<String> mockRecipe = new ArrayList<String>(Arrays.asList("ingredient1","ingredient2"));
+        var Recipe2 = new AddRecipeDto("name", mockRecipe);
+        recipeController.addRecipe(Recipe2);
+
+        verify(mockRepository, times(1)).save(any());
+    }*/
 
     @Test
     void addRecipe_ThrowsBadRequest() {

@@ -10,6 +10,7 @@ import org.springframework.core.annotation.Order;
 import ro.unibuc.hello.data.IngredientEntity;
 import ro.unibuc.hello.data.IngredientRepository;
 import ro.unibuc.hello.dto.AddIngredientDto;
+import ro.unibuc.hello.dto.AddRecipeDto;
 import ro.unibuc.hello.exception.NotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -52,6 +53,19 @@ class IngredientControllerTestIT {
 
     @Test
     @Order(2)
+    public void getIngredient_Returns() {
+
+        var res = ingredientController.getIngredient("Este");
+        Assertions.assertEquals("Este", res.name);
+        Assertions.assertEquals(2, res.price);
+        Assertions.assertEquals(2, res.calories);
+        Assertions.assertEquals(2, res.protein);
+        Assertions.assertEquals(2, res.carb);
+        Assertions.assertEquals(2, res.fat);
+    }
+
+    @Test
+    @Order(3)
     void addIngredient() {
         var ingredient = new AddIngredientDto("Nu Este", 5, 5, 5, 5, 5);
 
@@ -60,7 +74,7 @@ class IngredientControllerTestIT {
         Assertions.assertNotNull(ingredientRepository.findByName("Nu Este"));
     }
 
-    @AfterAll
+/*    @AfterAll
     public void clean() {
         var x = ingredientRepository.findByName("Nu Este");
         if(x != null)
@@ -70,5 +84,5 @@ class IngredientControllerTestIT {
         if(y != null)
             ingredientRepository.delete(y);
 
-      }
+      }*/
 }
