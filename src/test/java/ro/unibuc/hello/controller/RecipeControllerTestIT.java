@@ -13,6 +13,7 @@ import ro.unibuc.hello.data.RecipeRepository;
 import ro.unibuc.hello.dto.AddRecipeDto;
 import ro.unibuc.hello.dto.AddIngredientDto;
 import ro.unibuc.hello.exception.NotFoundException;
+import org.junit.jupiter.api.Tag;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +21,7 @@ import java.util.Arrays;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
+@Tag("IT")
 class RecipeControllerTestIT {
     @Autowired
     IngredientRepository ingredientRepository;

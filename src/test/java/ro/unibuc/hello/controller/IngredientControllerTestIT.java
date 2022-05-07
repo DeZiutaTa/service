@@ -12,11 +12,13 @@ import ro.unibuc.hello.data.IngredientRepository;
 import ro.unibuc.hello.dto.AddIngredientDto;
 import ro.unibuc.hello.dto.AddRecipeDto;
 import ro.unibuc.hello.exception.NotFoundException;
+import org.junit.jupiter.api.Tag;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 
 @SpringBootTest
+@Tag("IT")
 class IngredientControllerTestIT {
 
     @Autowired
