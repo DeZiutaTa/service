@@ -23,7 +23,7 @@ pipeline {
                         env.IMAGE_TAG = "${env.MAJOR_VERSION}.\$((${env.MINOR_VERSION} + 1)).${env.PATCH_VERSION}"
                  }
                  sh "docker build -t urseilinca/hello-img:${MAJOR_VERSION}.\$((${MINOR_VERSION} + 1)).${PATCH_VERSION} ."
-                 sh "docker login docker.io -u urseilinca -p $DOCKER_PASSWORD"
+                 sh "docker login docker.io -u ilinca -p $DOCKER_PASSWORD"
                  sh "docker push urseilinca/hello-img:${env.IMAGE_TAG}"
                  sh "git tag ${env.IMAGE_TAG}"
                  sh "git push https://$GITHUB_TOKEN@github.com/DeZiutaTa/service.git ${env.IMAGE_TAG}"
