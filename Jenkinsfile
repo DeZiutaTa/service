@@ -24,7 +24,7 @@ pipeline {
                  }
                  sh "docker build -t urseilinca/hello-img:${MAJOR_VERSION}.\$((${MINOR_VERSION} + 1)).${PATCH_VERSION} ."
                  sh "git tag ${env.IMAGE_TAG}"
-                 sh "git push https://$GITHUB_TOKEN@github.com/urseilinca/service.git ${env.IMAGE_TAG}"
+                 sh "git push https://$GITHUB_TOKEN@github.com/DeZiutaTa/service.git ${env.IMAGE_TAG}"
                }
          }
         
