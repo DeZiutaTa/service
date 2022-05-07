@@ -41,7 +41,7 @@ pipeline {
         stage('Gradle E2E') {
                     steps {
                         script {
-                            sh([script: "./gradlew testE2E"])
+                            sh([script: "./gradlew testIT"])
                         }
                     }
                 }
