@@ -61,7 +61,7 @@ public class IngredientController {
     @Counted(value = "add.ingredient.count", description = "Times an ingredient was added")
     @ResponseStatus(HttpStatus.CREATED)
     public void addIngredient(@RequestBody AddIngredientDto model) {
-        metricsRegistry.counter("my_non_aop_metric", "endpoint", "add/ingredient").increment(counter.incrementAndGet());
+        metricsRegistry.counter("my_non_aop_metric", "endpoint", "ingredient/add").increment(counter.incrementAndGet());
 
         if (model.price < 0) {
             throw new BadRequestException(new HashMap<>() {{
