@@ -27,6 +27,8 @@ public class IngredientController {
     @Autowired
     MeterRegistry metricsRegistry;
 
+    private final AtomicLong counter = new AtomicLong();
+
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/ingredient")
     @Timed(value = "show.ingredient.time", description = "Time taken to return ingredient")

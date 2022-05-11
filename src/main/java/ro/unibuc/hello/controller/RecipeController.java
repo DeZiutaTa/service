@@ -27,7 +27,10 @@ public class RecipeController {
     @Autowired
     private IngredientRepository ingredientRepository;
 
-        @Autowired
+    private final AtomicLong counter = new AtomicLong();
+
+
+    @Autowired
     MeterRegistry metricsRegistry;
 
 
